@@ -1,0 +1,11 @@
+﻿<script>
+navigator.serviceWorker.register("worker.js", {
+  scope: "/test/a.html"
+}).then(function(){
+  fetch('/test/a.html').then(function(response) {
+    return response.text();
+  }).then(function(text) {
+    console.log(text); 
+  });
+});
+</script>
